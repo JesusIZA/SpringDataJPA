@@ -21,18 +21,18 @@ public class Domain {
         ProjectRepository projectRepository = context.getBean(ProjectRepository.class);
 
         Address address = new Address();
-        address.setId(1L);
+        //address.setId(1L);
         address.setCountry("Ukraine");
         address.setCity("Kyiv");
         address.setStreet("Pidvysotskogo");
         address.setPostCode("01014");
 
         Project project = new Project();
-        project.setId(1L);
+        //project.setId(1L);
         project.setTitle("Kyiv UA");
 
         Employee employee = new Employee();
-        employee.setId(1L);
+        //employee.setId(1L);
         employee.setFirstName("Jesus");
         employee.setLastName("Raichuk");
 
@@ -50,6 +50,10 @@ public class Domain {
         projects.add(project);
         employee.setProjects(projects);
 
-        System.out.println(employeeRepository.findByFirstAndLastName("Jesus", "Raichuk"));
+        addressRepository.save(address);
+        //employeeRepository.save(employee);
+        projectRepository.save(project);
+
+        //System.out.println(employeeRepository.findByFirstAndLastName("Jesus", "Raichuk"));
     }
 }
